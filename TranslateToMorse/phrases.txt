@@ -1,1 +1,31 @@
-﻿This is my file!
+﻿[
+	{
+		"author": "Mark Twain",
+		"quote": "Smoke weed every day",
+	},
+	{
+		"author": "Yogi Berra",
+		"quote": "I got super high at the baseball game",
+	},
+	{
+		"author": ,
+		"quote": ,
+	}
+]
+
+/*
+public class Quote {
+	public string author { get; set; }
+	public string quote { get; set; }
+}
+
+List<Quote> quotes = jsonParser.get("file.txt");
+
+Console.WriteLine(quotes[0].author) // "Mark Twain"
+
+for (int i = 0; i < quotes.length; i++) {
+	Console.WriteLine("Quote #" + (i + 1) + " is " + quotes[i].quote + " by " + quotes[i].author);
+}
+
+string userQuote = Console.ReadLine();
+*/

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace TranslateToMorse
 {
@@ -86,13 +88,29 @@ namespace TranslateToMorse
             return result;
         }
 
-        public static char[] PlayMessage(string bInput)
+        public static void PlayMessage(string bInput)
         {
             string morseText = ToMorseCode(bInput);
             char[] dotNDash = bInput.ToCharArray();
-            return dotNDash;
+            
             foreach(char character in dotNDash)
             {
+                if(character.ToString() == ".")
+                {
+                    Console.Beep(800, 100);
+                }
+                else if(character.ToString() == "-")
+                {
+                    Console.Beep(800, 300);
+                }
+                else if(character.ToString() == "/")
+                {
+                    Thread.Sleep(300);
+                }
+                else
+                {
+                    //Console.WriteLine("Something went wrong.");
+                }
 
             }
         }

@@ -15,13 +15,12 @@ namespace TranslateToMorse
                 Console.WriteLine("       What would you like to do?");
                 Console.WriteLine("------------------------------------------");
                 Console.WriteLine("1. Translate a word or phrase");
-                Console.WriteLine("2. View a list of common phrases");
-                Console.WriteLine("3. Add a new word or phrase to the list");
-                Console.WriteLine("4. Remove a word or phrase from the list");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("2. Select a popular quote at random");
+                Console.WriteLine("3. View list of favorite quotes");
+                Console.WriteLine("4. Exit");
                 Console.WriteLine("------------------------------------------");
-            
-                string userChoice = Console.ReadLine();
+
+                userChoice = Console.ReadLine();
 
                 switch (userChoice)
                 {
@@ -44,53 +43,76 @@ namespace TranslateToMorse
                             string bString = string.Empty;
                             while (bString != "q" && bString != "Q")
                             {
-                                Console.WriteLine("Enter 'B' to hear the code or enter 'Q' to exit to main menu");
-                                string bString = Console.ReadLine();
+                                Console.WriteLine("Enter 'B' to hear the code");
+                                Console.WriteLine("Enter 'S' to save this to your favorite phrases");
+                                Console.WriteLine("Enter 'Q' to exit to main menu");
 
-                                    char[] dotNDash = Beeps.PlayMessage(translate);
-                                    Console.WriteLine(dotNDash[]);
-                               
+
+                                bString = Console.ReadLine();
+
+                                if (bString.ToLower() == "b")
+                                {
+                                    MorseConverter.PlayMessage(translate);
+                                }
+
+                                if (bString.ToLower() == "s")
+                                {
+                                    SaveQuote(input);
+                                }
                             }
-
-
-
-
-
-
+                            break;
                         }
-
                         break;
 
                     case "2":
 
-                        string currentDirectory = Directory.GetCurrentDirectory();
-                        DirectoryInfo directory = new DirectoryInfo(currentDirectory);
-                        var fileName = Path.Combine(directory.FullName, "phrases.txt");
-                        var file = new FileInfo(fileName);
-                        if (file.Exists)
+                        Quote randQuote = RandomQuoteGenerator.GetRandomQuote();
+                        Console.WriteLine(randQuote.Text + "-" + randQuote.Author);
+                        Console.WriteLine("-------------------------------------------------");
+
+                        string translateQuote = MorseConverter.ToMorseCode(randQuote.Text);
+                        Console.WriteLine("In Morse Code this reads: " + translateQuote);
+
+                        string cString = string.Empty;
+                        while (cString != "q" && cString != "Q")
                         {
-                            using (var reader = new StreamReader(file.FullName))
+                            Console.WriteLine("Enter 'B' to hear the code");
+                            Console.WriteLine("Enter 'S' to save this to your favorite phrases");
+                            Console.WriteLine("Enter 'Q' to exit to main menu");
+
+
+                            cString = Console.ReadLine();
+
+                            if (cString.ToLower() == "b")
                             {
-                                Console.SetIn(reader);
-                                Console.WriteLine(Console.ReadLine());
+                                MorseConverter.PlayMessage(translateQuote);
                             }
 
+                            if (cString.ToLower() == "s")
+                            {
+                                SaveQuote(randQuote.Text + "-" + randQuote.Author);
+                            }
                         }
                         break;
 
                     case "3":
-                        Console.WriteLine("Case 3");
-                        break;
-                    case "4":
-                        Console.WriteLine("Case 4");
-                        break;
-                    case "5":
 
                         break;
+
+                    case "4":
+
+                        break;
+
                     default:
                         Console.WriteLine("Please Try Again");
+                        break;
                 }
-            
+            }
+        }
+
+        public static void SaveQuote(string input)
+        {
+            Console.WriteLine(input);
         }
     }
 }
