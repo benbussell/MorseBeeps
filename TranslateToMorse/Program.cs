@@ -160,14 +160,10 @@ namespace TranslateToMorse
                             int s = Int32.Parse(dString);
                             Quote quoteText = quotes[s - 1];
                             FavoritesList.QuoteSelectMenu(quotes, quoteText);
-
-
-
                         }
                         break;
                        
                     case "4":
-
                         break;
 
                     default:

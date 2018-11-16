@@ -33,7 +33,6 @@ namespace TranslateToMorse
             }
             //deserialize list of quotes
             return quotes;
-
         }
 
         public static Quote SelectRandomFromList(List<Quote> quotes)
@@ -44,11 +43,5 @@ namespace TranslateToMorse
             return randQuote;
             //select a Quote object at random from json list
         }
-
-
-
-
     }
-
-
 }

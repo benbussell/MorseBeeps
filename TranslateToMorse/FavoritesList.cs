@@ -14,9 +14,8 @@ namespace TranslateToMorse
             DirectoryInfo directory = new DirectoryInfo(currentDirectory);
             var fileName = Path.Combine(directory.FullName, "favorites.json");
             var listOfFavorites = DeserializeList(fileName);
-            //var fileContents = ReadFile(fileName);
-            //Console.WriteLine(fileContents);
             return listOfFavorites;
+            //returns list of Quote objects from favorites.json
 
         }
         public static string ReadFile(string fileName)
@@ -47,6 +46,7 @@ namespace TranslateToMorse
                 Console.WriteLine(yourQuote.Text);
                 string morse = MorseConverter.ToMorseCode(yourQuote.Text);
                 Console.WriteLine(morse);
+            //print out selected Quote in alphanumeric text and Morse text
 
             while (eString.ToLower() != "b")
             {
@@ -55,6 +55,7 @@ namespace TranslateToMorse
                 Console.WriteLine("Enter 'P' to play the code");
                 Console.WriteLine("Enter 'R' to remove this quote from the list");
                 Console.WriteLine("Enter 'B' to go back");
+                //secondary menu
 
                 eString = Console.ReadLine();
                 switch (eString)
@@ -62,12 +63,14 @@ namespace TranslateToMorse
                     case "p":
                         MorseConverter.PlayMessage(morse);
                         break;
+                        //beeps morse code back through computer audio out
 
                     case "r":
                         SaveQuotesToFile.RemoveQuote(yourQuote);
                         Console.WriteLine("-----------------------------------------------------------------------");
                         Console.WriteLine($"You have successfully removed: {yourQuote.Text} by {yourQuote.Author}.");
                         break;
+                        //removes selected quote from list of favorites
 
                     case "b":
                         break;

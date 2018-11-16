@@ -51,6 +51,8 @@ namespace TranslateToMorse
             DirectoryInfo directory = new DirectoryInfo(currentDirectory);
             var fileName = Path.Combine(directory.FullName, "favorites.json");
             var listOfFavorites = DeserializeList(fileName);
+            //returns deserialized list of favorite quotes
+
             int nopeIndex = -1;
             for(var i = 0; i < listOfFavorites.Count; i++ )
             {
@@ -64,8 +66,10 @@ namespace TranslateToMorse
             {
                 listOfFavorites.RemoveAt(nopeIndex);
             }
+            //removes a selected quote from the file favorites.json
             SerializeQuotes(listOfFavorites, fileName);
+            //re-serializes the list and writes it to the file
         }
-        //removes a selected quote from the file favorites.json
+        
     }
 }
