@@ -14,12 +14,12 @@ namespace TranslateToMorse
             string currentDirectory = Directory.GetCurrentDirectory();
             DirectoryInfo directory = new DirectoryInfo(currentDirectory);
             var fileName = Path.Combine(directory.FullName, "most_popular_quotes.json");
+            //fetch json file of popular quotes from directory
+
             var quotes = DeserializeQuotes(fileName);
             var randQuote = SelectRandomFromList(quotes);
             return randQuote;
-
-            //foreach (var quote in quotes)
-            //    Console.WriteLine(quote.Text + " - " + quote.Author);
+            //returns a random Quote object from the deserialized json dataset
         }
 
        public static List<Quote> DeserializeQuotes(string fileName)
@@ -31,7 +31,9 @@ namespace TranslateToMorse
             {
                 quotes = serializer.Deserialize<List<Quote>>(jsonReader);
             }
+            //deserialize list of quotes
             return quotes;
+
         }
 
         public static Quote SelectRandomFromList(List<Quote> quotes)
@@ -40,6 +42,7 @@ namespace TranslateToMorse
             Quote randQuote = new Quote();
             randQuote = quotes[rndm.Next(quotes.Count)];
             return randQuote;
+            //select a Quote object at random from json list
         }
 
 

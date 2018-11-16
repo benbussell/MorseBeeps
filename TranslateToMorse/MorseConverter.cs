@@ -84,7 +84,11 @@ namespace TranslateToMorse
                     translated.Add("key unavailable");
                     }
                 }
+                //convert alphanumeric characters to Morse dots and dashes
+
             var result =  string.Join(" ", translated);
+            //rejoin characters together in a single string
+
             return result;
         }
 
@@ -92,6 +96,7 @@ namespace TranslateToMorse
         {
             string morseText = ToMorseCode(bInput);
             char[] dotNDash = bInput.ToCharArray();
+            //break string of Morse characters into an array of individual dots, dashes, and spaces
             
             foreach(char character in dotNDash)
             {
@@ -99,19 +104,29 @@ namespace TranslateToMorse
                 {
                     Console.Beep(800, 100);
                 }
+                //beep a 'dot' through the computer's audio out
+
                 else if(character.ToString() == "-")
                 {
                     Console.Beep(800, 300);
                 }
-                else if(character.ToString() == "/")
+                //beep a 'dash' through the computer's audio out
+
+                else if (character.ToString() == "/")
                 {
-                    Thread.Sleep(300);
+                    Thread.Sleep(400);
                 }
-                else
+                //rest 300 miliseconds as a space between words 
+
+                else if (character.ToString() == " ")
                 {
-                    //Console.WriteLine("Something went wrong.");
+                    Thread.Sleep(200);
                 }
 
+                else
+                {
+                    Console.WriteLine("Something went wrong.");
+                }
             }
         }
     }

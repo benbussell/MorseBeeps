@@ -16,5 +16,6 @@ namespace TranslateToMorse
         public string Author { get; set; }
         public string Text { get; set; }
     }
+    //models json object from dataset to instances of class Quote
 
 }
