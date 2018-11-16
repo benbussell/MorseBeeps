@@ -44,11 +44,11 @@ namespace TranslateToMorse
                             Console.WriteLine(translate);
 
                             string bString = string.Empty;
-                            while (bString.ToLower() != "q")
+                            while (bString.ToLower() != "m")
                             {
-                                Console.WriteLine("Enter 'B' to hear the code");
+                                Console.WriteLine("Enter 'P' to play the code");
                                 Console.WriteLine("Enter 'S' to save this to your favorite phrases");
-                                Console.WriteLine("Enter 'Q' to exit to main menu");
+                                Console.WriteLine("Enter 'M' to exit to main menu");
                                 //secondary menu
 
                                 bString = Console.ReadLine();
@@ -58,7 +58,7 @@ namespace TranslateToMorse
                                     break;
                                 }
 
-                                if (bString.ToLower() == "b")
+                                if (bString.ToLower() == "p")
                                 {
                                     MorseConverter.PlayMessage(translate);
                                     //beeps morse code back through computer audio out
@@ -82,7 +82,7 @@ namespace TranslateToMorse
                                     //Add new Quote to list of favorites and save to file
                                 }
 
-                                if (bString.ToLower() == "q")
+                                if (bString.ToLower() == "m")
                                 {
                                     break;
                                 }
@@ -104,11 +104,11 @@ namespace TranslateToMorse
                         //convert randomly selected quote from alpanumeric text to Morse dots and dashes
 
                         string cString = string.Empty;
-                        while (cString.ToLower() != "q")
+                        while (cString.ToLower() != "b")
                         {
-                            Console.WriteLine("Enter 'B' to hear the code");
+                            Console.WriteLine("Enter 'P' to play the code");
                             Console.WriteLine("Enter 'S' to save this to your favorite phrases");
-                            Console.WriteLine("Enter 'Q' to exit to main menu");
+                            Console.WriteLine("Enter 'B' to go back");
                             
                             //secondary menu
 
@@ -119,7 +119,7 @@ namespace TranslateToMorse
                                 break;
                             }
 
-                            if (cString.ToLower() == "b")
+                            if (cString.ToLower() == "p")
                             {
                                 MorseConverter.PlayMessage(translateQuote);
                                 //beeps morse code back through computer audio out
@@ -131,7 +131,7 @@ namespace TranslateToMorse
                                 //Add new Quote to list of favorites and save to file
                             }
 
-                            if (cString.ToLower() == "q")
+                            if (cString.ToLower() == "b")
                             {
                                 break;
                             }
@@ -143,17 +143,17 @@ namespace TranslateToMorse
                         
 
                         string dString = String.Empty;
-                        while (dString.ToLower() != "q")
+                        while (dString.ToLower() != "m")
                         {
                             List<Quote> quotes =FavoritesList.PrintList(); 
                                 for(int i = 0; i < quotes.Count; i++)
                                 {
                                     Console.WriteLine($"{i+1}.  {quotes[i].Text}  -{quotes[i].Author} ");
                                 }
-                            Console.WriteLine("---------------------------------------------------------------");
-                            Console.WriteLine("Select the number of a quote from the list or enter 'Q' to quit");
+                            Console.WriteLine("---------------------------------------------------------------------");
+                            Console.WriteLine("Select the number of a quote from the list or enter 'M' for Main Menu");
                             dString = Console.ReadLine();
-                            if (dString.ToLower() == "q")
+                            if (dString.ToLower() == "m")
                             {
                                 break;
                             }

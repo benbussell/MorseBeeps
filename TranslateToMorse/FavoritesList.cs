@@ -41,32 +41,35 @@ namespace TranslateToMorse
         public static void QuoteSelectMenu(List<Quote> quotes, Quote yourQuote)
         {
             string eString = string.Empty;
-            while (eString.ToLower() != "q")
-                { 
+             
                 Console.WriteLine("------------------------------------");
                 Console.WriteLine("You have chosen:");
                 Console.WriteLine(yourQuote.Text);
                 string morse = MorseConverter.ToMorseCode(yourQuote.Text);
                 Console.WriteLine(morse);
+
+            while (eString.ToLower() != "b")
+            {
                 Console.WriteLine("Please select from the options below");
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Enter 'B' to hear the code");
+                Console.WriteLine("Enter 'P' to play the code");
                 Console.WriteLine("Enter 'R' to remove this quote from the list");
-                Console.WriteLine("Enter 'Q' to go back");
+                Console.WriteLine("Enter 'B' to go back");
 
                 eString = Console.ReadLine();
                 switch (eString)
                 {
-                    case "b":
+                    case "p":
                         MorseConverter.PlayMessage(morse);
                         break;
 
                     case "r":
                         SaveQuotesToFile.RemoveQuote(yourQuote);
+                        Console.WriteLine("-----------------------------------------------------------------------");
                         Console.WriteLine($"You have successfully removed: {yourQuote.Text} by {yourQuote.Author}.");
                         break;
 
-                    case "q":
+                    case "b":
                         break;
 
                     default:

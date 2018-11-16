@@ -1,1 +1,48 @@
-[{"Likes":"3918 likes","Author":"Scott Adams","Text":"\"I love you like a fat kid loves cake!\""},{"Likes":"2870 likes","Author":"Napoléon Bonaparte","Text":"\"Never interrupt your enemy when he is making a mistake.\""},{"Likes":"4296 likes","Author":"Nicolas Chamfort","Text":"\"The most wasted of all days is one without laughter.\""},{"Likes":"0","Author":"Roast Beef Kazanzakis","Text":"I'm the guy who sucks plus I got depression"},{"Likes":"3301 likes","Author":"Franz Kafka","Text":"\"Many a book is like a key to unknown chambers within the castle of one's own self.\""},{"Likes":"3437 likes","Author":"Chuck Palahniuk","Text":"\"You realize that our mistrust of the future makes it hard to give up the past.\""},{"Likes":"0","Author":"Sleepy Baby Georgie","Text":"HI I'M GEORGE"}]
+[
+ 
+  {
+    "Likes": "3918 likes",
+    "Author": "Scott Adams",
+    "Text": "\"I love you like a fat kid loves cake!\""
+  },
+  {
+    "Likes": "2870 likes",
+    "Author": "Napoléon Bonaparte",
+    "Text": "\"Never interrupt your enemy when he is making a mistake.\""
+  },
+  {
+    "Likes": "0",
+    "Author": "Ben Bussell",
+    "Text": "\"This is my program and I hope you like it!\""
+  },
+  {
+    "Likes": "4296 likes",
+    "Author": "Nicolas Chamfort",
+    "Text": "\"The most wasted of all days is one without laughter.\""
+  },
+  {
+    "Likes": "0",
+    "Author": "Roast Beef Kazanzakis",
+    "Text": "I'm the guy who sucks plus I got depression"
+  },
+  {
+    "Likes": "3301 likes",
+    "Author": "Franz Kafka",
+    "Text": "\"Many a book is like a key to unknown chambers within the castle of one's own self.\""
+  },
+  {
+    "Likes": "3437 likes",
+    "Author": "Chuck Palahniuk",
+    "Text": "\"You realize that our mistrust of the future makes it hard to give up the past.\""
+  },
+  {
+    "Likes": "3540 likes",
+    "Author": "Frank McCourt",
+    "Text": "\"You might be poor, your shoes might be broken, but your mind is a palace.\""
+  },
+  {
+    "Likes": "2536 likes",
+    "Author": "Andy Warhol",
+    "Text": "\"They always say time changes things, but you actually have to change them yourself.\""
+  }
+]
